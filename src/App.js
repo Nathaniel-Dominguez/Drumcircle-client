@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <div className="container-fluid">
+          <div>
             <Nav user={this.state.user} updateUser={this.getUser} />
             <Route exact path="/" component={Home} />
             <Route path="/login" component={

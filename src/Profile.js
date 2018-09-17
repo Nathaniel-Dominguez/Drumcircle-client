@@ -5,7 +5,7 @@ class Profile extends Component {
   render() {
     if(this.props.user){
       return (
-          <div className="container">
+          <div className="container" id="main-body">
             <div className="row">
               <div className="col-sm">
                 <img className="img-thumbnail" src="http://www.facetheforce.today/random/400?r=1" alt={this.props.user.name} />
