@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <div className="container">
+          <div className="container-fluid">
             <Nav user={this.state.user} updateUser={this.getUser} />
             <Route exact path="/" component={Home} />
             <Route path="/login" component={
