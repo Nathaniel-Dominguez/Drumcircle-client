@@ -29,6 +29,7 @@ class Nav extends Component {
     }
     return(
         <div>
+
           <nav className="nav navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
           <a href="../" class="navbar-brand">
             <img src="/img/drum_logo.png" className="navbar-logo" />
@@ -36,9 +37,10 @@ class Nav extends Component {
           </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
+
             </button>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <a class="navbar-brand" href="/">Drumcircle</a>
+              <a className="navbar-brand" href="/">Drumcircle</a>
               {links}
             </div>
           </nav>
