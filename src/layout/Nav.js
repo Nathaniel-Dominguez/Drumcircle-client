@@ -29,10 +29,15 @@ class Nav extends Component {
         );
     }
     return(
-        <div>
-          <nav className="nav">
-            <Link to="/">Home</Link>
-            {links}
+        <div className="container">
+          <nav className="nav navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <Link to="/">Home</Link>
+              {links}
+            </div>
           </nav>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
