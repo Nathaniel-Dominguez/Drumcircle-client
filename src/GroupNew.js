@@ -11,16 +11,19 @@ class GroupNew extends Component {
 								<label htmlFor="groupNname">Group Name:</label>
 								<input type="text" className="form-control"/>
 							</div>
-							<div class="form-group">
-							    <label for="exampleFormControlSelect1">Example select</label>
-							    <select class="form-control" id="exampleFormControlSelect1">
+							<div className="form-group">
+							    <label htmlFor="users">Example select</label>
+							    <select className="form-control" id="users">
 							      <option>1</option>
 							      <option>2</option>
 							      <option>3</option>
 							      <option>4</option>
 							      <option>5</option>
 							    </select>
-						  </div>
+						  	</div>
+						  	<div className="form-group">
+								<button type="submit" className="btn btn-success">Create new Group:</button>
+						  	</div>
 						</form>
 					</div>
 				</div>
