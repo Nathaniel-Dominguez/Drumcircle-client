@@ -17,6 +17,7 @@ class Nav extends Component {
           <span>
             <a onClick={this.handleLogout}>Logout</a>
             <Link to="/profile">Profile</Link>
+            <Link to="/group">Groups</Link>
           </span>
         );
     }
@@ -35,7 +36,7 @@ class Nav extends Component {
               <span class="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-              <a class="navbar-brand" href="#">Hidden brand</a>
+              <a class="navbar-brand" href="#">Drumcircle</a>
               <Link to="/">Home</Link>
               {links}
             </div>
