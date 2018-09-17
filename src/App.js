@@ -7,6 +7,7 @@ import Footer from './layout/Footer';
 import Home from './Home';
 import Login from './auth/Login';
 import Nav from './layout/Nav';
+import Group from './Group';
 import Profile from './Profile';
 import Signup from './auth/Signup';
 
@@ -70,6 +71,9 @@ class App extends Component {
             } />
             <Route path="/profile" component={
               () => (<Profile user={this.state.user} />)
+            } />
+            <Route path="/group" component={
+              () => (<Group user={this.state.user} />)
             } />
           </div>
         </Router>

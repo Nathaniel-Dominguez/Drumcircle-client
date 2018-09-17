@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
 
 class Nav extends Component {
   handleLogout = (e) => {
@@ -17,6 +16,7 @@ class Nav extends Component {
           <span>
             <a onClick={this.handleLogout}>Logout</a>
             <Link to="/profile">Profile</Link>
+            <Link to="/group">Groups</Link>
           </span>
         );
     }
@@ -30,13 +30,18 @@ class Nav extends Component {
     }
     return(
         <div>
-          <nav className="nav">
-            <Link to="/">Home</Link>
-            {links}
+          <nav className="nav navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a class="navbar-brand" href="#">Drumcircle</a>
+              <Link to="/">Home</Link>
+              {links}
+            </div>
           </nav>
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            <h1 className="App-title">Drumcircle</h1>
           </header>
         </div>
       );
