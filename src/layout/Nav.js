@@ -17,6 +17,7 @@ class Nav extends Component {
             <a onClick={this.handleLogout}>Logout</a>
             <Link to="/profile">Profile</Link>
             <Link to="/group">Groups</Link>
+            <Link to="/groupnew">New Group</Link>
           </span>
         );
     }
