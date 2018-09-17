@@ -8,17 +8,13 @@ class GroupNew extends Component {
 					<div className="col-12">
 						<form>
 							<div className="form-group">
-								<label htmlFor="groupNname">Group Name:</label>
+								<label htmlFor="groupName">Group Name:</label>
 								<input type="text" className="form-control"/>
 							</div>
 							<div className="form-group">
-							    <label htmlFor="users">Example select</label>
+							    <label htmlFor="users">Select Group Members:</label>
 							    <select className="form-control" id="users">
-							      <option>1</option>
-							      <option>2</option>
-							      <option>3</option>
-							      <option>4</option>
-							      <option>5</option>
+							      <option>List of Member Names</option>
 							    </select>
 						  	</div>
 						  	<div className="form-group">
