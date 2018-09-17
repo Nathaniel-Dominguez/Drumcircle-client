@@ -8,7 +8,7 @@ class Profile extends Component {
           <div className="container">
             <div className="row">
               <div className="col-2">
-                <img src="http://www.facetheforce.today/random/400?r=1" className="img-thumbnail"/>
+                <img src="http://www.facetheforce.today/random/400?r=1" className="img-thumbnail" alt=""/>
                 <h2>Hello again, {this.props.user.name}!</h2>
                 <h4>Your email is {this.props.user.email}</h4>
               </div>
