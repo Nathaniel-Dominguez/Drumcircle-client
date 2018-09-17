@@ -19,6 +19,8 @@ class Signup extends Component {
 
   handlePasswordChange = (e) => { this.setState({ password: e.target.value }); }
 
+  handleImageChange = (e) => { this.setState({ image: e.target.value }); }
+
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
@@ -51,6 +53,9 @@ class Signup extends Component {
             </div>
             <div>
               <input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+            </div>
+            <div>
+              <input name="Image" type="URL" placeholder="What is your Profile Picture URL" value={this.state.image} onChange={this.handleImageChange} />
             </div>
             <input type="submit" value="Sign Me Up!" className="button" />
           </form>
