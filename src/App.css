@@ -17,6 +17,10 @@ nav a:hover {
   color: hotpink;
 }
 
+.bg-primary {
+  background-color: #78C2AD !important;
+}
+
 .footer {
   background-color: #555;
   width: 100%;
@@ -33,4 +37,20 @@ nav a:hover {
 .card {
   width: 28rem;
   height: auto;
+}
+
+body {
+    background: linear-gradient( rgba(108, 159, 145, 0.75), rgba(108, 159, 145, 0.75) ), url("http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/marijuana-pattern-florin-tenica.jpg");
+    padding-top: 70px;
+}
+
+#main-body {
+    background: #DAF4ED;
+}
+
+.navbar-logo {
+    max-width: 45px;
+}
+.page-header {
+    padding-top: 20px;
 }
