@@ -10,6 +10,7 @@ class Profile extends Component {
           </div>
         );
     }
+    
     return(
       <div>
         <p>This is a profile page. You must be logged in to see it.</p>
