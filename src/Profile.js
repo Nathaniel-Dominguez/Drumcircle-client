@@ -6,6 +6,7 @@ class Profile extends Component {
     if(this.props.user){
       return (
 
+
           <div className="container">
             <div className="row">
               <div className="col-sm">
@@ -18,13 +19,14 @@ class Profile extends Component {
                   <div className="card-body">
                     <Link className="card-text" to="/group">Your Groups</Link>
                   </div>
+
                 </div>
               </div>
-              <div className="col-sm">
-                <Link className="btn btn-success" to="/groupnew">Make a new Group</Link>
-              </div>
             </div>
-          </div>
+            <div className="col-sm">
+              <Link className="btn btn-success" to="/groupnew">Make a new Group</Link>
+            </div>
+          </div>     
         );
     }
 
