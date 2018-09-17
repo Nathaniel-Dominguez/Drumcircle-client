@@ -8,6 +8,7 @@ import Home from './Home';
 import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Group from './Group';
+import GroupNew from './GroupNew';
 import Profile from './Profile';
 import Signup from './auth/Signup';
 
@@ -60,7 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <div className="container">
+          <div className="container-fluid">
             <Nav user={this.state.user} updateUser={this.getUser} />
             <Route exact path="/" component={Home} />
             <Route path="/login" component={
@@ -74,6 +75,9 @@ class App extends Component {
             } />
             <Route path="/group" component={
               () => (<Group user={this.state.user} />)
+            } />
+            <Route path="/groupnew" component={
+              () => (<GroupNew user={this.state.user} />)
             } />
           </div>
         </Router>
