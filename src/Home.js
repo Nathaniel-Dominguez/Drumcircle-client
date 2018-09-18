@@ -1,10 +1,55 @@
 import React, { Component } from 'react';
+import Signup from './auth/Signup'
 
 class Home extends Component {
   render() {
     return(
-    	<div className="container">
-    		<h1></h1>
+    	<div className="">
+
+
+    		<header id="home-section">
+		    <div className="dark-overlay">
+		      <div className="home-inner">
+		        <div className="container">
+		          <div className="row">
+		            <div className="col-lg-8 d-none d-lg-block">
+		              <h1 className="display-4">Build <strong>social profiles</strong> and Gain! </h1>
+		              <div className="d-flex flex-row">
+		                <div className="p-4 align-self-start">
+		                  <i className="fa fa-check"></i>
+		                </div>
+		                <div className="p-4 align-self-end">
+		                  You should join the Drumcircle group, you will make great friends.
+		                </div>
+		              </div>
+		              <div className="d-flex flex-row">
+		                <div className="p-4 align-self-start">
+		                  <i className="fa fa-check"></i>
+		                </div>
+		                <div className="p-4 align-self-end">
+		                  You should join the Drumcircle group, you will make great friends.
+		                </div>
+		              </div>
+		              <div className="d-flex flex-row">
+		                <div className="p-4 align-self-start">
+		                  <i className="fa fa-check"></i>
+		                </div>
+		                <div className="p-4 align-self-end">
+		                  You should join the Drumcircle group, you will make great friends.
+		                </div>
+		              </div>
+		            </div>
+		            <div className="col-lg-4">
+		              <Signup />
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </header>
+		  <br />
+		  <br />
+
 
     		<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
 			  <ol className="carousel-indicators">
