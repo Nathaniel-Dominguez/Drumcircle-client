@@ -6,11 +6,11 @@ class GroupNew extends Component {
 		this.state = {value: ''}
 	}
 
-	handleChange(event) {
+	handleChange = (event) => { 
 		this.setState({value: event.target.value})
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		alert('A new group was created: ' + this.state.value)
 		event.preventDefault()
 	}
@@ -28,8 +28,8 @@ class GroupNew extends Component {
 								</label>
 							</div>
 							<div className="form-group">
-							    <label htmlFor="users">Select Group Members:</label>
-							    <select className="form-control" id="users">
+							    <label for="userId">Select Group Members:</label>
+							    <select className="form-control" id="userId">
 							      <option>List of Member Names</option>
 							    </select>
 						  	</div>
