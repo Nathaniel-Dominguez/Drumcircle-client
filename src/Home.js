@@ -4,53 +4,41 @@ import Signup from './auth/Signup'
 class Home extends Component {
   render() {
     return(
-    	<div className="">
-
-
-    		<header id="home-section">
-		    <div className="dark-overlay">
-		      <div className="home-inner">
-		        <div className="container">
-		          <div className="row">
-		            <div className="col-lg-8 d-none d-lg-block">
-		              <h1 className="display-4">Build <strong>social profiles</strong> and Gain! </h1>
-		              <div className="d-flex flex-row">
+    	<div className="container">
+		    <div className="row">
+		        <div className="col-lg-6 d-none d-lg-block">
+		            <h1 className="display-4">Build <strong>social profiles</strong> and Gain! </h1>
+		            <div className="d-flex flex-row">
 		                <div className="p-4 align-self-start">
-		                  <i className="fa fa-check"></i>
+		                	<i className="fa fa-check"></i>
 		                </div>
 		                <div className="p-4 align-self-end">
-		                  You should join the Drumcircle group, you will make great friends.
+		                	You should join the Drumcircle group, you will make great friends.
 		                </div>
-		              </div>
-		              <div className="d-flex flex-row">
-		                <div className="p-4 align-self-start">
-		                  <i className="fa fa-check"></i>
-		                </div>
-		                <div className="p-4 align-self-end">
-		                  You should join the Drumcircle group, you will make great friends.
-		                </div>
-		              </div>
-		              <div className="d-flex flex-row">
-		                <div className="p-4 align-self-start">
-		                  <i className="fa fa-check"></i>
-		                </div>
-		                <div className="p-4 align-self-end">
-		                  You should join the Drumcircle group, you will make great friends.
-		                </div>
-		              </div>
 		            </div>
-		            <div className="col-lg-4">
-		              <Signup />
+		            <div className="d-flex flex-row">
+		                <div className="p-4 align-self-start">
+		                	<i className="fa fa-check"></i>
+		                </div>
+		                <div className="p-4 align-self-end">
+		                	You should join the Drumcircle group, you will make great friends.
+		                </div>
 		            </div>
-		          </div>
+		            <div className="d-flex flex-row">
+		                <div className="p-4 align-self-start">
+		                	<i className="fa fa-check"></i>
+		                </div>
+		                <div className="p-4 align-self-end">
+		                  	You should join the Drumcircle group, you will make great friends.
+		                </div>
+		            </div>
 		        </div>
-		      </div>
-		    </div>
-		  </header>
-		  <br />
-		  <br />
-
-
+		        <div className="col-lg-6">
+		            <Signup />
+		        </div>
+		    </div>		    
+			<br />
+			<br />
     		<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
 			  <ol className="carousel-indicators">
 			    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -131,49 +119,6 @@ class Home extends Component {
 				</div>
 				</div>
 				</div>
-				<br />
-			      <hr />
-
-
-
-
-
-
-				<div className="modal-body">
-				  <div className="container-fluid">
-  			    	<h2> We are going to add a dispay of our show groups here </h2>
-				      <hr />
-				    <div className="row">
-      			      <hr />
-				      <div className="col-md-4">.col-md-4</div>
-				      <div className="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
-				    </div>
-				    <div className="row">
-				      <div className="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-				      <div className="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-				    </div>
-				    <div className="row">
-				      <div className="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-				    </div>
-				    <div className="row">
-				      <div className="col-sm-9">
-				        Level 1: .col-sm-9
-				        <div className="row">
-				          <div className="col-8 col-sm-6">
-				            Level 2: .col-8 .col-sm-6
-				          </div>
-				          <div className="col-4 col-sm-6">
-				            Level 2: .col-4 .col-sm-6
-				          </div>
-				        </div>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-				<br />
-				<br />
-				<br />
-
 			</div>
 
       );
