@@ -63,7 +63,9 @@ class App extends Component {
         <Router>
           <div className="container" id="main-body">
             <Nav user={this.state.user} updateUser={this.getUser} />
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={
+              () => (<Home user={this.state.user} updateUser={this.getUser} />)
+            } />
             <Route path="/login" component={
               () => (<Login user={this.state.user} updateUser={this.getUser} />)
             } />
