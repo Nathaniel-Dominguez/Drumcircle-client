@@ -10,7 +10,7 @@ class Post extends Component {
     }
   }
   componentDidMount(){
-    var comments = axios.get(`http://localhost:3000/comments/5b9ffc9db8357e0f2ddf5e8a`)
+    var comments = axios.get(`http://localhost:3000/comments/${this.props.content._id}`)
       .then((response) => {
         var commentFeed = response.data.map((comment) => <Comment content={comment} />);
         this.setState({ feed: commentFeed});
