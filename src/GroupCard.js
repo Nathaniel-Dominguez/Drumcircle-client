@@ -6,7 +6,7 @@ class GroupCard extends Component {
 		super(props)
 		this.state = {
 			value: '',
-			GroupID: this.props.groupID 
+			groupId: this.props.groupID 
 		}
 	}
 
@@ -17,7 +17,7 @@ class GroupCard extends Component {
 	render() {
 		return(
 			<div>
-				<div className="card">
+				<div className="card card-group">
 				  <img className="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Post-It.jpg" alt="Card cap" />
 				  <div className="card-body">
 				    <h5 className="card-title">Group title</h5>

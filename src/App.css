@@ -36,6 +36,11 @@ nav a:hover {
 
 
 .card {
+  width: 18rem;  
+  height: auto;
+}
+
+.card-group {
   width: 28rem;  
   height: auto;
 }
