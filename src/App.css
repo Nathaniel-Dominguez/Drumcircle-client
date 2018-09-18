@@ -36,7 +36,7 @@ nav a:hover {
 
 
 .card {
-  width: 18rem;  
+  width: 28rem;  
   height: auto;
 }
 
@@ -61,5 +61,11 @@ body {
 }
 .page-header {
     padding-top: 20px;
+}
+
+.make-new{
+  display: flex;
+  justify-content: flex-end;
+  max-height: 50px;
 }
 
