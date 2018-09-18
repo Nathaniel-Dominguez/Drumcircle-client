@@ -6,13 +6,13 @@ class GroupNew extends Component {
 		this.state = {value: ''}
 	}
 
-	handleChange = (event) => { 
+	handleChange = (event) => {
 		this.setState({value: event.target.value})
 	}
 
 	handleSubmit = (event) => {
+    event.preventDefault()
 		alert('A new group was created: ' + this.state.value)
-		event.preventDefault()
 	}
 
 	render() {
