@@ -28,13 +28,11 @@ class App extends Component {
   getUser = () => {
     var token = localStorage.getItem('mernToken');
     if(token){
-      console.log('token found in LS', token);
       // There is a token in localStorage. Try to validate it!
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(response => {
-        console.log('SUCCESS', response);
         this.setState({
           user: response.data.user
         });
@@ -73,9 +71,7 @@ class App extends Component {
             <Route path="/profile" component={
               () => (<Profile user={this.state.user} />)
             } />
-            <Route path="/group" component={
-              () => (<Group user={this.state.user} />)
-            } />
+            <Route path="/group/:id" render={(props) =><Group {...props} user={this.state.user}/>} />
             <Route path="/groupnew" component={
               () => (<GroupNew user={this.state.user} />)
             } />
