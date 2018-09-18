@@ -24,8 +24,14 @@ class Post extends Component {
       postId : e.target.postId.value,
       content : e.target.content.value
     };
+    var newData = {
+      userId : e.target.userId.value,
+      postId : this.props.user,
+      content : e.target.content.value
+    };
     axios.post('http://localhost:3000/comments/new',data);
-    this.setState({ comments: this.state.comments.concat(data) });
+    console.log(newData);
+    this.setState({ comments: this.state.comments.concat(newData) });
 
   }
   render(props){
@@ -41,7 +47,7 @@ class Post extends Component {
         <h3>{this.props.content.content}</h3>
         <p>By: {author}</p>
         {this.state.comments.map((comment, index) => <Comment content={comment} key={index}/>)}
-        <CommentForm handleSubmit={this.handleSubmit} postId={this.props.content._id} user={this.state.user}/>
+        <CommentForm handleSubmit={this.handleSubmit} postId={this.props.content._id} user={this.props.user}/>
       </div>
     );
   }

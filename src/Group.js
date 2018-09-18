@@ -6,7 +6,7 @@ class Group extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      feed: '',
+      posts: [],
       user:''
     }
   }
@@ -14,7 +14,7 @@ class Group extends Component {
     axios.get(`http://localhost:3000/posts/${this.props.match.params.id}`)
       .then((response) => {
         var posts = response.data;
-        console.log('GROUP PROPS',this.props.user);
+        this.setState({posts: posts});
         var feedNew = posts.map((post, index) => 
           <Post user={this.props.user} key={index} content={post}/>
         );
@@ -31,7 +31,10 @@ class Group extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-2">
-            {this.state.feed}
+            {this.state.posts.map((post, index) => 
+          <Post user={this.props.user} key={index} content={post}/>
+              )}
+
 					</div>
 					<div className="col-10">
 					</div>
