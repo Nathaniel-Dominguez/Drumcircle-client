@@ -8,9 +8,9 @@ import Home from './Home';
 import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Group from './Group';
-import GroupCard from './GroupCard';
 import GroupNew from './GroupNew';
 import Profile from './Profile';
+import PostNew from './PostNew';
 import Signup from './auth/Signup';
 
 class App extends Component {
@@ -79,6 +79,9 @@ class App extends Component {
             } />
             <Route path="/groupnew" component={
               () => (<GroupNew user={this.state.user} />)
+            } />
+            <Route path="/postnew" component={
+              () => (<PostNew user={this.state.user} />)
             } />
           </div>
         </Router>

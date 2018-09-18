@@ -6,7 +6,7 @@ class Home extends Component {
     return(
     	<div className="container">
 		    <div className="row">
-		        <div className="col-lg-8 d-none d-lg-block">
+		        <div className="col-lg-6 d-none d-lg-block">
 		            <h1 className="display-4">Build <strong>social profiles</strong> and Gain! </h1>
 		            <div className="d-flex flex-row">
 		                <div className="p-4 align-self-start">
@@ -33,7 +33,7 @@ class Home extends Component {
 		                </div>
 		            </div>
 		        </div>
-		        <div className="col-lg-4">
+		        <div className="col-lg-2">
 		            <Signup />
 		        </div>
 		    </div>		    

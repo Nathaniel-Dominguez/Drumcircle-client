@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Group from './Group'
 import './Post.css';
 
 class PostNew extends Component {
-    constructor(props) {
-      super(props)
+  constructor(props) {
+    super(props)
       this.state = {
         groupId: this.props.groupId,
         time: (new Date()).getTime(),
@@ -12,48 +11,46 @@ class PostNew extends Component {
         image: null,
         userId: null
       }
-    }
+  }
 
-    handleChange = (event) => { 
-      this.setState({value: event.target.value})
-    }
+  handleChange = (event) => { 
+    this.setState({value: event.target.value})
+  }
 
-    handleSubmit = (event) => {
-      alert('A new group was created: ' + this.state.value)
-      event.preventDefault()
-      this.setState(image: this.props.image)
-    }
+  handleSubmit = (event) => {
+    alert('A new group was created: ' + this.state.value)
+    event.preventDefault()
+    // this.setState(image: this.props.image)
+  }
 
-
-    render() {
+  render() {
     return(
-      <div className="container module text">
-        <div className="row post-user">
+      <div className="container">
+        <div className="row">
           <div className="col-12">
             <form onSubmit={this.handleSubmit}>
-
+              <div className="form-group">
+                <label>
+                  Content:
+                  <textarea name="Content" placeholder="Add your post here" value={this.props.content} />
+                </label>
+              </div>
               <div className="form-group">
                 <label>
                   Picture:
                   <input name="Image" type="URL" placeholder="picture URL?" value={this.props.image} onChange={this.handleChange} />
                 </label>
               </div>
-
-                <div className="form-group">
-                  <textarea name="Content" placeholder="Add your post here" value={this.props.content} />
-                </div>
-
-                <div className="form-group">
+              <div className="form-group">
                 <button value="submit" type="Submit" className="btn btn-success">Make new post </button>
-                </div>
-
+              </div>
             </form>
           </div>
         </div>
       </div>
-      )
+    )
   }
-
+}
 
 
 export default PostNew;
