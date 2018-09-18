@@ -1,0 +1,25 @@
+/* Doing a CSS reset on the page */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.callout.secondary {
+  margin-top: 20px;
+  background: #222;
+  color: white;
+}
+
+.on {
+  margin-right: 5px;
+}
+
+.post-text {
+  background: white;
+  color: #222;
+  padding: 20px;
+  :last-child {
+    margin: 0;
+  }
+}

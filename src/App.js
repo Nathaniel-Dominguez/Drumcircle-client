@@ -10,6 +10,7 @@ import Nav from './layout/Nav';
 import Group from './Group';
 import GroupNew from './GroupNew';
 import Profile from './Profile';
+import PostNew from './PostNew';
 import Signup from './auth/Signup';
 
 class App extends Component {
@@ -78,6 +79,9 @@ class App extends Component {
             <Route path="/group/:id" render={(props) =><Group {...props} user={this.state.user}/>} />
             <Route path="/groupnew" component={
               () => (<GroupNew user={this.state.user} />)
+            } />
+            <Route path="/postnew" component={
+              () => (<PostNew user={this.state.user} />)
             } />
           </div>
         </Router>
