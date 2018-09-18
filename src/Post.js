@@ -1,42 +1,56 @@
 import React, { Component } from 'react';
-import Group from './Group'
-import './Post.css';
-
-
+import axios from 'axios';
+import Comment from './Comment';
+import CommentForm from './CommentForm';
 
 class Post extends Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        value: '',
-        groupId: this.props.groupId,
-        image: this.props.image,
-        content: this.props.content,
-        time: this.props.time
-
-      }
+  constructor() {
+    super();
+    this.state = {
+      comments: [],
+      userId: ''
     }
-  
-    render() {
-      return (
-        <div className="container">
-          <div className="row">
-            <div className="col-6 callout secondary post-div">
-              <h4>Post</h4>
+  }
+  componentDidMount(){
+    var comments = axios.get(`http://localhost:3000/comments/${this.props.content._id}`)
+      .then((response) => {
+        this.setState({ comments: response.data});
+      });
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    var data = {
+      userId : e.target.userId.value,
+      postId : e.target.postId.value,
+      content : e.target.content.value
+    };
+    var newData = {
+      userId : e.target.userId.value,
+      postId : this.props.user,
+      content : e.target.content.value
+    };
+    axios.post('http://localhost:3000/comments/new',data);
+    console.log(newData);
+    this.setState({ comments: this.state.comments.concat(newData) });
 
-              <form className="post" name={this.props.groupId}>
-                <input name="Image" type="URL" placeholder="picture URL?" value={this.props.image} />
-                <textarea name="Content" placeholder="Add your post here" value={this.props.content} />
-                <button id="submit" type="submit" className="button comment-button action-button expand-right">Add comments</button>
-              </form>
-
-            </div>
-          </div>
-        </div>
-      )
+  }
+  render(props){
+    var author;
+    if(this.props.content.userId != null){
+      author = this.props.content.userId.name;
+    }else {
+      author = 'Anonymous';
     }
-};
-
-
+    console.log('POST USER', this.props.user);
+    return(
+      <div>
+        <h3>{this.props.content.content}</h3>
+        <p>By: {author}</p>
+        {this.state.comments.map((comment, index) => <Comment content={comment} key={index}/>)}
+        <CommentForm handleSubmit={this.handleSubmit} postId={this.props.content._id} user={this.props.user}/>
+      </div>
+    );
+  }
+}
 
 export default Post;

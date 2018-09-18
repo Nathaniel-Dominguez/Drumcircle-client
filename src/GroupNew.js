@@ -12,6 +12,7 @@ class GroupNew extends Component {
 		}
 	}
 
+
 	handleChange = (e) => { 
 		this.setState({value: e.target.value})
 	}

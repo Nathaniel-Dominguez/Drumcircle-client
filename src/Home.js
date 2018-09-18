@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Signup from './auth/Signup'
 
 class Home extends Component {
@@ -33,10 +34,7 @@ class Home extends Component {
 		                </div>
 		            </div>
 		        </div>
-		        <div className="col-lg-2">
-		            <Signup />
-		        </div>
-		    </div>		    
+		    </div>
 			<br />
 			<br />
     		<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -73,7 +71,7 @@ class Home extends Component {
 					  	<hr className="my-4" />
 					  	<p> You can create or join group to find the lastest feeds in your circle
 					   	everybody can share the feeds that they like.</p>
-					  	<a className="btn btn-primary btn-lg" href="/signup" role="button">Sign up to Learn more</a>
+					  	<Link className="btn btn-primary btn-lg" to="/signup" role="button">Sign up to Learn more</Link>
 					</div>
 			 	</div>
 			</div>

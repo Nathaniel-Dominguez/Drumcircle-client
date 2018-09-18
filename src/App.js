@@ -35,7 +35,6 @@ class App extends Component {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(response => {
-        console.log('SUCCESS', response);
         this.setState({
           user: response.data.user
         });
@@ -59,12 +58,15 @@ class App extends Component {
   }
 
   render() {
+    console.log('App state',this.state.user);
     return (
       <div className="App">
         <Router>
           <div className="container" id="main-body">
             <Nav user={this.state.user} updateUser={this.getUser} />
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={
+              () => (<Home user={this.state.user} updateUser={this.getUser} />)
+            } />
             <Route path="/login" component={
               () => (<Login user={this.state.user} updateUser={this.getUser} />)
             } />
@@ -74,9 +76,7 @@ class App extends Component {
             <Route path="/profile" component={
               () => (<Profile user={this.state.user} />)
             } />
-            <Route path="/group" component={
-              () => (<Group user={this.state.user} />)
-            } />
+            <Route path="/group/:id" render={(props) =><Group {...props} user={this.state.user}/>} />
             <Route path="/groupnew" component={
               () => (<GroupNew user={this.state.user} />)
             } />

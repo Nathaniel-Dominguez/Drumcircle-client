@@ -20,14 +20,16 @@ class Profile extends Component {
             <div className="col-sm make-new btn">
               <Link className="btn btn-success" to="/groupnew">Make a new Group</Link>
             </div>
-          </div> 
-        </div>     
+          </div>
+         </div>
+
+
         );
     }
     return(
       <div>
         <p>This is a profile page. You must be logged in to see it.</p>
-        <p>Would you like to <a href="/login">Log In</a> or <a href="/signup">Sign up</a>?</p>
+        <p>Would you like to <Link to="/login">Log In</Link> or <Link to="/signup">Sign up</Link>?</p>
       </div>
       );
   }
