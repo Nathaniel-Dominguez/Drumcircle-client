@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import GroupCard from './GroupCard';
 
 class Profile extends Component {
   render() {
     if(this.props.user){
+      console.log(this.props.user)
       return (
-       <div className="container">
+       <div className="container" id="main-body">
           <div className="row">
             <div className="col-sm">
-              <img className="img-thumbnail" src="http://www.facetheforce.today/random/400?r=1" alt="" />
+              <img className="img-thumbnail" src={this.props.user.image} alt="" />
               <h2>Hello again, {this.props.user.name}!</h2>
               <h4>Your email is {this.props.user.email}</h4>
             </div>
             <div className="col-sm">
-              <div className="card">
-                <div className="card-body">
-                  <Link className="card-text" to="/group">Your Groups</Link>
-                </div>
-              </div>
+              <GroupCard />
             </div>
             <div className="col-sm">
               <Link className="btn btn-success" to="/groupnew">Make a new Group</Link>
             </div>
           </div> 
-         </div>     
+        </div>     
         );
     }
     return(
