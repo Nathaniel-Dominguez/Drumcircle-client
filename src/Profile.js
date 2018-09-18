@@ -17,7 +17,7 @@ class Profile extends Component {
             <div className="col-sm">
               <GroupCard />
             </div>
-            <div className="col-sm">
+            <div className="col-sm make-new btn">
               <Link className="btn btn-success" to="/groupnew">Make a new Group</Link>
             </div>
           </div> 
