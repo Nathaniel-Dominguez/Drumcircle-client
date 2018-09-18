@@ -43,24 +43,28 @@ class Signup extends Component {
     }
     return(
         <div>
-          <h2>Signup as a new user</h2>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <input name="Name" placeholder="What is your name?" value={this.state.name} onChange={this.handleNameChange} />
-            </div>
-            <div>
-              <input name="Email" placeholder="What is your email?" value={this.state.email} onChange={this.handleEmailChange} />
-            </div>
-            <div>
-              <input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
-            </div>
-            <div>
-              <input name="Image" type="URL" placeholder="What is your Profile Picture URL" value={this.state.image} onChange={this.handleImageChange} />
-            </div>
-            <input type="submit" value="Sign Me Up!" className="button" />
-          </form>
+        <div className="card bg-primary text-center card-form">
+          <div className="card-body">
+            <h3>Signup as a new user Today</h3>
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                <input name="Name" placeholder="What is your name?" value={this.state.name} onChange={this.handleNameChange} />
+              </div>
+              <div className="form-group">
+                <input name="Email" placeholder="What is your email?" value={this.state.email} onChange={this.handleEmailChange} />
+              </div>
+              <div className="form-group">
+                <input name="Password" type="password" placeholder="Password?" value={this.state.password} onChange={this.handlePasswordChange} />
+              </div>
+              <div className="form-group">
+                <input name="Image" type="URL" placeholder="Profile picture URL?" value={this.state.image} onChange={this.handleImageChange} />
+              </div>
+              <input type="submit" value="Sign Me Up!" className="btn btn-outline-light btn-block" />
+            </form>
+          </div>
         </div>
-      );
+      </div>
+    );
   }
 }
 
