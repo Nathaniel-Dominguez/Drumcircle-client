@@ -96,14 +96,40 @@ class Home extends Component {
 				  If you are already signed up, click here to see the  <a href="/groups" className="alert-link">groups</a>. Give it a click if you like.
 				</div>
 
+				<div className="row">
+				  <div className="col-md-3 ml-5">
 
 				<div className="card">
-				  <img className="card-img-top" src="https://c1.staticflickr.com/4/3702/9767175701_5e6a3418ef_b.jpg" alt="CardCap" />
+				  <img className="card-img-top" src="https://c1.staticflickr.com/5/4021/4705218644_c31c62a43a_b.jpg" alt="CardCap" />
 				  <div className="card-body">
 				    <h5 className="card-title">Our popular group</h5>
 				    <p className="card-text"> This group enjoys Drumcircle on the beach.</p>
 				    <a href="/groups" className="btn btn-primary"> See their Post </a>
 				  </div>
+				</div>
+				</div>
+				<div className="col-md-3 ml-5">
+
+				<div className="card">
+				  <img className="card-img-top" src="https://c1.staticflickr.com/5/4021/4705218644_c31c62a43a_b.jpg" alt="CardCap" />
+				  <div className="card-body">
+				    <h5 className="card-title">Our popular group</h5>
+				    <p className="card-text"> This group enjoys Drumcircle on the beach.</p>
+				    <a href="/groups" className="btn btn-primary"> See their Post </a>
+				  </div>
+				</div>
+				</div>
+				<div className="col-md-3 ml-5">
+
+				<div className="card">
+				  <img className="card-img-top" src="https://c1.staticflickr.com/5/4021/4705218644_c31c62a43a_b.jpg" alt="CardCap" />
+				  <div className="card-body">
+				    <h5 className="card-title">Our popular group</h5>
+				    <p className="card-text"> This group enjoys Drumcircle on the beach.</p>
+				    <a href="/groups" className="btn btn-primary"> See their Post </a>
+				  </div>
+				</div>
+				</div>
 				</div>
 				<br />
 			      <hr />

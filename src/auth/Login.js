@@ -37,16 +37,23 @@ class Login extends Component {
     }
     return(
         <div>
-          <h2>Login as an existing user</h2>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <input name="Email" placeholder="What is your email?" value={this.state.email} onChange={this.handleEmailChange} />
+          <div class="card bg-primary text-center card-form">
+              <div class="card-body">
+                <h3>Login as an existing user</h3>
+
+                <form onSubmit={this.handleSubmit}>
+                  <div class="form-group">
+                     <input name="Email" placeholder="Email?" value={this.state.email} onChange={this.handleEmailChange} />
+                  </div>
+               
+                  <div class="form-group">
+                     <input name="Password" type="password" placeholder="Password?" value={this.state.password} onChange={this.handlePasswordChange} />
+                  </div>
+               
+                  <input type="submit" value="Log Me In!" className="btn btn-outline-light btn-block" />
+                </form>
+              </div>
             </div>
-            <div>
-              <input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
-            </div>
-            <input type="submit" value="Log Me In!" className="btn" />
-          </form>
         </div>
       );
   }

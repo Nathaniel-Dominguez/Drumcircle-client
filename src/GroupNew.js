@@ -34,7 +34,7 @@ class GroupNew extends Component {
 							    </select>
 						  	</div>
 						  	<div className="form-group">
-								<button value="submit" type="submit" className="btn btn-success">Create new Group:</button>
+								<button value="submit" type="Submit" className="btn btn-success">Create new Group:</button>
 						  	</div>
 						</form>
 					</div>
