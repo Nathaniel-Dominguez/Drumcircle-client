@@ -6,22 +6,26 @@ class Group extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      feed: ''
+      feed: '',
+      user:''
     }
   }
   componentDidMount() {
     axios.get(`http://localhost:3000/posts/${this.props.match.params.id}`)
       .then((response) => {
         var posts = response.data;
-        console.log('posts',posts);
-        var feedNew = posts.map((post) => 
-          <Post content={post}/>
+        console.log('GROUP PROPS',this.props.user);
+        var feedNew = posts.map((post, index) => 
+          <Post user={this.props.user} key={index} content={post}/>
         );
         this.setState({feed: feedNew});
       });
   }
-
+  componentDidUpdate(){
+    console.log('Updated state',this.props.user);
+  }
 	render() {
+    console.log('user',this.props.user);
 		return(
 
 			<div className="container">

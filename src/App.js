@@ -28,6 +28,7 @@ class App extends Component {
   getUser = () => {
     var token = localStorage.getItem('mernToken');
     if(token){
+      console.log('token found in LS', token);
       // There is a token in localStorage. Try to validate it!
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 'Authorization': `Bearer ${token}` }
@@ -56,6 +57,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('App state',this.state.user);
     return (
       <div className="App">
         <Router>
