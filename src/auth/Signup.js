@@ -54,7 +54,7 @@ class Signup extends Component {
                 <input name="Email" placeholder="Email?" value={this.state.email} onChange={this.handleEmailChange} />
               </div>
               <div className="form-group">
-                <input name="Password" type="Password?" placeholder="Password?" value={this.state.password} onChange={this.handlePasswordChange} />
+                <input name="Password" type="password" placeholder="Password?" value={this.state.password} onChange={this.handlePasswordChange} />
               </div>
               <div className="form-group">
                 <input name="Image" type="URL" placeholder="Profile picture URL?" value={this.state.image} onChange={this.handleImageChange} />
