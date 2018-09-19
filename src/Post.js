@@ -12,9 +12,10 @@ class Post extends Component {
     }
   }
   componentDidMount(){
+    console.log('COMMENT CONTENT',this.props.content);
     var comments = axios.get(`http://localhost:3000/comments/${this.props.content._id}`)
       .then((response) => {
-        this.setState({ comments: response.data});
+          this.setState({ comments: response.data});
       });
   }
   handleSubmit = (e) => {
