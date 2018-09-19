@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Post from './Post';
+import PostNew from './PostNew';
 
 class Group extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Group extends Component {
     this.state = {
       posts: [],
       user:''
-    }
+    };
   }
   componentDidMount() {
     axios.get(`http://localhost:3000/posts/${this.props.match.params.id}`)
@@ -27,12 +28,12 @@ class Group extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-2">
-            {this.state.posts.map((post, index) => 
-          <Post user={this.props.user} key={index} content={post}/>
-              )}
-
 					</div>
 					<div className="col-10">
+            <PostNew groupId={this.props.match.params.id} user={this.props.user}/>
+            {this.state.posts.map((post, index) => 
+              <Post user={this.props.user} key={index} content={post}/>
+            )}
 					</div>
 				</div>
 			</div>
