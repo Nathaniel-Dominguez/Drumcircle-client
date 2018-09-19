@@ -25,13 +25,16 @@ class PostNew extends Component {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <form onSubmit={(e) => this.props.handleSubmit(e,this.state)}>
+
+            <form onSubmit={this.handleSubmit} method="POST" action="http://localhost:3000/posts/new">
+              
               <div className="form-group">
                 <label>
                   Content:
                   <textarea name="content" placeholder="Add your post here" value={this.state.content} onChange={this.handleContentChange} />
                 </label>
               </div>
+              
               <div className="form-group">
                 <label>
                   Picture:

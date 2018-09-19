@@ -21,6 +21,7 @@ class Group extends Component {
   componentDidUpdate(){
     console.log('Updated state',this.props.user);
   }
+
   handleSubmit = (event,childState) => {
     event.preventDefault();
     childState.userId = event.target.userId.value;
@@ -32,6 +33,7 @@ class Group extends Component {
         this.setState({posts: this.state.posts.concat(response.data)});
       });
   }
+  
 	render() {
     console.log('user',this.props.user);
 		return(
