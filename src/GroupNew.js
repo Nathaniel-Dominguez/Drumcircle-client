@@ -5,32 +5,50 @@ class GroupNew extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			value: '',
+			name: '',
 			names: [],
 			ids: [],
-			allusers: []
+			allusers: [],
+      selectValue:''
 		}
 	}
 
 
 	handleChange = (e) => { 
-		this.setState({value: e.target.value})
+		this.setState({name: e.target.value})
 	}
 
 	handleSubmit = (e) => {
-		alert('A new group was created: ' + this.state.value)
 		e.preventDefault()
-		console.log(this.state)
-		axios.post('/groupnew', this.state)
-		.then(result => {
-			console.log('successful group', result)
-			this.props.updateGroup()
-		})
-		.catch(err => {
-			console.log('Error', err)
-		})
-	}
+    axios.post('http://localhost:3000/groups/new',{
+      userId: this.state.ids,
+      name: this.state.name
+    });
+  }
+  handleSelectChange = (event) => {
+    this.setState({selectValue: event.target.value});
+  }
 
+  handleButton = () => {
+    var name;
+    for(var i = 0; i < this.state.allusers.length; i++){
+      if(this.state.allusers[i].id == this.state.selectValue){
+        name = this.state.allusers[i].name;
+      }   
+    }
+    console.log(this.state.selectValue,name);
+    this.setState({ names: this.state.names.concat(name), 
+      ids: this.state.ids.concat(this.state.selectValue),
+      });
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:3000/users')
+      .then((response) => {
+        console.log('response',response);
+        this.setState({allusers: response.data});
+      });
+  }
 	render() {
 		return(
 			<div className="container">
@@ -40,14 +58,18 @@ class GroupNew extends Component {
 							<div className="form-group">
 								<label>
 								Group Name:
-									<input name="name" type="text" className="form-control" value={this.state.value} onChange={this.handleChange} />
+									<input name="name" type="text" className="form-control" value={this.state.name} onChange={this.handleChange} />
 								</label>
 							</div>
 							<div className="form-group">
 							    <label for="userId">Select Group Members:</label>
-							    <select className="form-control" id="userId">
+							    <select className="form-control" id="userId" value={this.state.selectValue} onChange={this.handleSelectChange}>
 							      <option>List of Member Names</option>
+                    {this.state.allusers.map((user) => 
+                      <option value={user.id} onClick={this.selectClick}>{user.name}</option>
+                    )}
 							    </select>
+                  <button className="btn btn-success" type="button" onClick={this.handleButton}>Add</button>
 						  	</div>
 						  	<div className="form-group">
 						  		<input hidden type="text"/>
@@ -56,6 +78,11 @@ class GroupNew extends Component {
 						</form>
 					</div>
 				</div>
+        <div className="row">
+          <div className="col-12">
+            {this.state.names.map((name) => <p>{name}</p>)}
+          </div>
+        </div>
 			</div>
 			)
 	}
