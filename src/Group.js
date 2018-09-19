@@ -9,7 +9,7 @@ class Group extends Component {
     this.state = {
       posts: [],
       user:''
-    }
+    };
   }
   componentDidMount() {
     axios.get(`http://localhost:3000/posts/${this.props.match.params.id}`)
@@ -22,9 +22,17 @@ class Group extends Component {
     console.log('Updated state',this.props.user);
   }
 
-  
-
-
+  handleSubmit = (event,childState) => {
+    event.preventDefault();
+    childState.userId = event.target.userId.value;
+    console.log(childState);
+    axios.post('http://localhost:3000/posts/new',childState)
+      .then((response) => {
+        console.log(response);
+        response.data.userId = this.props.user;
+        this.setState({posts: this.state.posts.concat(response.data)});
+      });
+  }
   
 	render() {
     console.log('user',this.props.user);
@@ -33,9 +41,12 @@ class Group extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-2">
+					</div>
+					<div className="col-10">
+            <PostNew handleSubmit={this.handleSubmit} groupId={this.props.match.params.id} user={this.props.user}/>
             {this.state.posts.map((post, index) => 
-          <Post user={this.props.user} key={index} content={post}/>
-              )}
+              <Post user={this.props.user} key={index} content={post}/>
+            )}
 					</div>
 				</div>
 			</div>

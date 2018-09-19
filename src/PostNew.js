@@ -20,18 +20,12 @@ class PostNew extends Component {
     this.setState({content: event.target.value})
   }
 
-
-  handleSubmit = (event) => {
-    alert('A new group was created: ' + this.state.value)
-    event.preventDefault()
-    // this.setState(image: this.props.image)
-  }
-
   render() {
     return(
       <div className="container">
         <div className="row">
           <div className="col-12">
+
             <form onSubmit={this.handleSubmit} method="POST" action="http://localhost:3000/posts/new">
               
               <div className="form-group">
@@ -48,7 +42,7 @@ class PostNew extends Component {
                 </label>
               </div>
 
-              <input hidden name="userId" value={this.props.user ? this.props.user.id : null} />
+              <input hidden id="userId" name="userId" value={this.props.user ? this.props.user.id : null} />
 
               <div className="form-group">
                 <button value="submit" type="Submit" className="btn btn-success">Make new post </button>
