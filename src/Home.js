@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return(
     	<div className="container">
-		    <div className="row">
+		    <div className="row" id="home-section">
 		        <div className="col-lg-8 d-none d-lg-block">
 		            <h1 className="display-4">Build <strong>social profiles</strong> and Gain! </h1>
 		            <div className="d-flex flex-row">
