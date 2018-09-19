@@ -25,14 +25,15 @@ class Post extends Component {
       content : e.target.content.value
     };
     var newData = {
-      userId : e.target.userId.value,
-      postId : this.props.user,
+      userId : this.props.user,
+      postId : e.target.postId.value,
       content : e.target.content.value
     };
-    axios.post('http://localhost:3000/comments/new',data);
-    console.log(newData);
-    this.setState({ comments: this.state.comments.concat(newData) });
-
+    axios.post('http://localhost:3000/comments/new',data)
+      .then((response) => {
+        console.log(response.data);
+      });
+      this.setState({comments: this.state.comments.concat(newData)}); 
   }
   render(props){
     var author;
