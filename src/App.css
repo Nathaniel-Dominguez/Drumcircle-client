@@ -1,12 +1,4 @@
 /* CUSTOM STYLES */
-#root {
-  height: 100vh!important;
-}
-
-.App {
-  height: 100%!important;
-}
-
 nav {
   width: 100%;
   background-color: #555;
@@ -27,6 +19,10 @@ nav a:hover {
 
 .bg-primary {
   background-color: #78C2AD !important;
+}
+
+.container {
+  min-height: 1000px;
 }
 
 .footer {
@@ -61,11 +57,6 @@ nav a:hover {
 body {
     background: linear-gradient( rgba(108, 159, 145, 0.75), rgba(108, 159, 145, 0.75) ), url("http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/marijuana-pattern-florin-tenica.jpg");
     padding-top: 70px;
-    height: 100%;
-}
-
-html {
-  height: 100%;
 }
 
 #main-body {
