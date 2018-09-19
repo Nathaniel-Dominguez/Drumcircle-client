@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Post from './Post';
+import PostNew from './PostNew';
 
 class Group extends Component {
   constructor(props) {
@@ -20,6 +21,11 @@ class Group extends Component {
   componentDidUpdate(){
     console.log('Updated state',this.props.user);
   }
+
+  
+
+
+  
 	render() {
     console.log('user',this.props.user);
 		return(
