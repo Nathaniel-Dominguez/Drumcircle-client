@@ -15,10 +15,6 @@ class Group extends Component {
       .then((response) => {
         var posts = response.data;
         this.setState({posts: posts});
-        var feedNew = posts.map((post, index) => 
-          <Post user={this.props.user} key={index} content={post}/>
-        );
-        this.setState({feed: feedNew});
       });
   }
   componentDidUpdate(){
