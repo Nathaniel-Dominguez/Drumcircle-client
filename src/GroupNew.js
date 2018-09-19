@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class GroupNew extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {value: ''}
+		this.state = {
+			value: '',
+			names: [],
+			ids: [],
+			allusers: []
+		}
 	}
 
-	handleChange = (event) => { 
-		this.setState({value: event.target.value})
+
+	handleChange = (e) => { 
+		this.setState({value: e.target.value})
 	}
 
-	handleSubmit = (event) => {
+	handleSubmit = (e) => {
 		alert('A new group was created: ' + this.state.value)
-		event.preventDefault()
+		e.preventDefault()
+		console.log(this.state)
+		axios.post('/groupnew', this.state)
+		.then(result => {
+			console.log('successful group', result)
+			this.props.updateGroup()
+		})
+		.catch(err => {
+			console.log('Error', err)
+		})
 	}
 
 	render() {

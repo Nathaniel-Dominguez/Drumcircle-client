@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Signup from './auth/Signup'
 
 class Home extends Component {
   render() {
     return(
     	<div className="container">
-		    <div className="row" id="home-section">
-		        <div className="col-lg-8 d-none d-lg-block">
+		    <div className="row">
+		        <div className="col-lg-6 d-none d-lg-block">
 		            <h1 className="display-4">Build <strong>social profiles</strong> and Gain! </h1>
 		            <div className="d-flex flex-row">
 		                <div className="p-4 align-self-start">
@@ -33,10 +34,7 @@ class Home extends Component {
 		                </div>
 		            </div>
 		        </div>
-		        <div className="col-lg-4">
-		            <Signup />
-		        </div>
-		    </div>		    
+		    </div>
 			<br />
 			<br />
     		<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -73,7 +71,7 @@ class Home extends Component {
 					  	<hr className="my-4" />
 					  	<p> You can create or join group to find the lastest feeds in your circle
 					   	everybody can share the feeds that they like.</p>
-					  	<a className="btn btn-primary btn-lg" href="/signup" role="button">Sign up to Learn more</a>
+					  	<Link className="btn btn-primary btn-lg" to="/signup" role="button">Sign up to Learn more</Link>
 					</div>
 			 	</div>
 			</div>

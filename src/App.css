@@ -21,6 +21,10 @@ nav a:hover {
   background-color: #78C2AD !important;
 }
 
+.container {
+  min-height: 1000px;
+}
+
 .footer {
   background-color: #555;
   width: 100%;
@@ -45,6 +49,7 @@ nav a:hover {
   height: auto;
 }
 
+
 .h-100{
   max-height: 650px;
 }
@@ -56,9 +61,9 @@ body {
 
 #main-body {
     background: #DAF4ED;
-    padding: 20px 20px;
-    margin: auto;
+    padding: 30px 30px;
     height: 100%;
+
 }
 
 .navbar-logo {
@@ -73,31 +78,4 @@ body {
   justify-content: flex-end;
   max-height: 50px;
 }
- #home-section{
-  /*  background: url("https://c1.staticflickr.com/1/799/27348480748_fc3c586617_b.jpg") no-repeat;*/
-  min-height: 500px;
-  background-size: cover;
-  background-attachment: fixed; }
-  #home-section .dark-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 700px; }
-  #home-section .home-inner {
-    padding-top: 150px; }
-  #home-section .card-form {
-    opacity: 0.8; }
-  #home-section .fa {
-    color: #008ed6;
-    background: #fff;
-    padding: 4px;
-    border-radius: 5px;
-    font-size: 30px; 
-
- }
-
-
-
 

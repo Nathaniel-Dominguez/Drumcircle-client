@@ -1,16 +1,8 @@
-
 /* Doing a CSS reset on the page */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  line-height: 1.5;
-  color: white;
-  background: #444;
-  padding: 20px;
 }
 
 .callout.secondary {
@@ -19,17 +11,10 @@ body {
   color: white;
 }
 
-
-.post-user {
-  display: flex;
-  align-items: center;
-  margin: 0 0 10px 0;
-}
-
-
 .on {
   margin-right: 5px;
 }
+
 .post-text {
   background: white;
   color: #222;
