@@ -30,9 +30,6 @@ class Group extends Component {
             {this.state.posts.map((post, index) => 
           <Post user={this.props.user} key={index} content={post}/>
               )}
-
-					</div>
-					<div className="col-10">
 					</div>
 				</div>
 			</div>
