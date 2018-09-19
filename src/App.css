@@ -42,13 +42,9 @@ nav a:hover {
 .card {
   width: 18rem;  
   height: auto;
+  margin: 0 auto;
+  float: none;
 }
-
-.card-group {
-  width: 28rem;  
-  height: auto;
-}
-
 
 .h-100{
   max-height: 650px;
@@ -63,7 +59,6 @@ body {
     background: #DAF4ED;
     padding: 30px 30px;
     height: 100%;
-
 }
 
 .navbar-logo {
