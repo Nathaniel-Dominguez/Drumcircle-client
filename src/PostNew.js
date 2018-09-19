@@ -13,9 +13,13 @@ class PostNew extends Component {
       }
   }
 
-  handleChange = (event) => { 
-    this.setState({value: event.target.value})
+  handleImageChange = (event) => { 
+    this.setState({image: event.target.value})
   }
+   handleContentChange = (event) => { 
+    this.setState({content: event.target.value})
+  }
+
 
   handleSubmit = (event) => {
     alert('A new group was created: ' + this.state.value)
@@ -28,19 +32,22 @@ class PostNew extends Component {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} method="POST" action="http://localhost:3000/posts/new">
               <div className="form-group">
                 <label>
                   Content:
-                  <textarea name="Content" placeholder="Add your post here" value={this.props.content} />
+                  <textarea name="content" placeholder="Add your post here" value={this.state.content} onChange={this.handleContentChange} />
                 </label>
               </div>
               <div className="form-group">
                 <label>
                   Picture:
-                  <input name="Image" type="URL" placeholder="picture URL?" value={this.props.image} onChange={this.handleChange} />
+                  <input name="image" type="URL" placeholder="picture URL?" value={this.state.image} onChange={this.handleImageChange} />
                 </label>
               </div>
+
+              <input hidden name="userId" value={this.props.user ? this.props.user.id : null} />
+
               <div className="form-group">
                 <button value="submit" type="Submit" className="btn btn-success">Make new post </button>
               </div>
