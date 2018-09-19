@@ -36,7 +36,7 @@ class GroupNew extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-12">
-						<form onSubmit={this.handleSubmit}>
+						<form onSubmit={this.handleSubmit} method="POST" action="http://localhost:3000/groups/new">
 							<div className="form-group">
 								<label>
 								Group Name:
@@ -50,6 +50,7 @@ class GroupNew extends Component {
 							    </select>
 						  	</div>
 						  	<div className="form-group">
+						  		<input hidden type="text"/>
 								<button value="submit" type="Submit" className="btn btn-success">Create new Group:</button>
 						  	</div>
 						</form>
