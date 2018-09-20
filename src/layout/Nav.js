@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../animate.css';
 
 class Nav extends Component {
   handleLogout = (e) => {
@@ -31,10 +32,11 @@ class Nav extends Component {
         <div>
 
           <nav className="nav navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+          <div className="animated zoomIn delay-1s">
           <a href="../" className="navbar-brand">
             <img src="/img/drum_logo.png" className="navbar-logo" alt=""/>
-            <strong>DrumCircle</strong>
-          </a>
+             <strong>DrumCircle</strong> 
+          </a></div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
 

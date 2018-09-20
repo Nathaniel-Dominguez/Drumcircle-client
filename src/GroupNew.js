@@ -61,30 +61,32 @@ class GroupNew extends Component {
 		return(
 			<div className="container">
 				<div className="row">
-					<div className="col-12">
+					<div className="col-6">
 						<form onSubmit={this.handleSubmit} method="POST" action="http://localhost:3000/groups/new">
-							<div className="form-group">
-								<label>
-								Group Name:
+							
+              <div className="form-group">
+								<label>	Group Name: </label>
 									<input name="name" type="text" className="form-control" value={this.state.name} onChange={this.handleChange} />
-								</label>
 							</div>
+
 							<div className="input-group">
-							    <select className="form-control" id="userId" value={this.state.selectValue} onChange={this.handleSelectChange}>
-							      <option>List of Member Names</option>
-                    {this.state.allusers.map((user) => 
-                      <option value={user.id} onClick={this.selectClick}>{user.name}</option>
-                    )}
-							    </select>
-                  <div class="input-group-append">
-                    <button className="btn btn-success" type="button" onClick={this.handleButton}>Add</button>
-                  </div>
+						    <select className="form-control" id="userId" value={this.state.selectValue} onChange={this.handleSelectChange}>
+						      <option>List of Member Names</option>
+                  {this.state.allusers.map((user) => 
+                    <option value={user.id} onClick={this.selectClick}>{user.name}</option>
+                  )}
+						    </select>
+
+                <div class="input-group-append">
+                  <button className="btn btn-success" type="button" onClick={this.handleButton}>Add</button>
+                </div>
               </div>
-						  	<div className="form-group">
-						  		<input hidden type="text"/>
-            {this.state.names.map((name) => <p>{name}</p>)}
+
+					  	<div className="form-group">
+					  		<input hidden type="text"/>
+                {this.state.names.map((name) => <p>{name}</p>)}
 								<button value="submit" type="Submit" className="btn btn-success">Create new Group:</button>
-						  	</div>
+					  	</div>
 						</form>
 					</div>
 				</div>
