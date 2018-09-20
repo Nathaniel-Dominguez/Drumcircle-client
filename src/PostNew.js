@@ -24,22 +24,19 @@ class PostNew extends Component {
     return(
       <div>
         <div className="row">
-          <div className="col-12">
+          <div className="col-sm-12">
 
-            <form onSubmit={(event) => { this.props.handleSubmit(event,this.state)}} method="POST" action="http://localhost:3000/posts/new">
+            <form className="form" onSubmit={(event) => { this.props.handleSubmit(event,this.state)}} method="POST" action="http://localhost:3000/posts/new">
               
               <div className="form-group">
                 <label>
-                  Content:
-                  <textarea name="content" placeholder="Add your post here" value={this.state.content} onChange={this.handleContentChange} />
-                </label>
-              </div>
-              
-              <div className="form-group">
+                  Content: </label>
+                  <textarea className="form-control" name="content" rows="3" placeholder="Add your post here" value={this.state.content} onChange={this.handleContentChange} />
+
                 <label>
-                  Picture:
-                  <input name="image" type="URL" placeholder="picture URL?" value={this.state.image} onChange={this.handleImageChange} />
-                </label>
+                  Picture: </label>
+                  <input className="form-control" name="image" type="URL" placeholder="picture URL?" value={this.state.image} onChange={this.handleImageChange} />
+               
               </div>
 
               <input hidden id="userId" name="userId" value={this.props.user ? this.props.user.id : null} />
