@@ -42,7 +42,6 @@ class Login extends Component {
           <div className="card bg-primary text-center card-form">
               <div className="card-body">
                 <h3>Login as an existing user</h3>
-
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
                      <input name="Email" placeholder="Email?" value={this.state.email} onChange={this.handleEmailChange} />
@@ -53,16 +52,8 @@ class Login extends Component {
                   </div>
                
                   <input type="submit" value="Log Me In!" className="btn btn-outline-light btn-block" />
-                </form>
-
-              </div>
-           
-              <div class="form-group">
-                 <input name="Password" type="password" placeholder="Password?" value={this.state.password} onChange={this.handlePasswordChange} />
-              </div>
-           
-              <input type="submit" value="Log Me In!" className="btn btn-outline-light btn-block" />
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       );
