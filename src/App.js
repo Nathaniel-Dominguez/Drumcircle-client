@@ -76,10 +76,10 @@ class App extends Component {
             <Route path="/profile" component={
               () => (<Profile user={this.state.user} />)
             } />
-            <Route path="/group/:id" render={(props) =><Group {...props} user={this.state.user}/>} />
-            <Route path="/groupnew" component={
+          <Route path="/group/new" component={
               () => (<GroupNew user={this.state.user} />)
             } />
+            <Route path="/group/:id" render={(props) =><Group {...props} user={this.state.user}/>} />
             <Route path="/postnew" component={
               () => (<PostNew user={this.state.user} />)
             } />

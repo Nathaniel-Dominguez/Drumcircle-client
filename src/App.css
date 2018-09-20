@@ -73,4 +73,7 @@ body {
   justify-content: flex-end;
   max-height: 50px;
 }
-
+.profile-card img {
+    height: 100px;
+    width: 100px;
+}
