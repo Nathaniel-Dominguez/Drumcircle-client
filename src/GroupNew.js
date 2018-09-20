@@ -10,7 +10,8 @@ class GroupNew extends Component {
 			names: [],
 			ids: [],
 			allusers: [],
-      selectValue:''
+      selectValue:'',
+      toRedirect: null
 		}
 	}
 
@@ -26,7 +27,7 @@ class GroupNew extends Component {
       name: this.state.name
     }).then((response) => {
       var url = `/group/${response.data._id}`;
-        <Redirect to={url} />
+      this.setState({toRedirect: url});
     });
   }
   handleSelectChange = (event) => {
@@ -54,6 +55,9 @@ class GroupNew extends Component {
       });
   }
 	render() {
+    if(this.state.toRedirect != null) {
+      return (<Redirect to={this.state.toRedirect} />) 
+    }
 		return(
 			<div className="container">
 				<div className="row">
