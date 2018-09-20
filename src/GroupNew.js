@@ -56,7 +56,7 @@ class GroupNew extends Component {
   }
 	render() {
     if(this.state.toRedirect != null) {
-      return (<Redirect to={this.state.toRedirect} />) 
+      return (<Redirect to='/profile' />) 
     }
 		return(
 			<div className="container">
