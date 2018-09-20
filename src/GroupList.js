@@ -26,7 +26,7 @@ class GroupList extends Component {
       <div>
       {this.state.groups.map((group) => {
         var url = `/group/${group._id}`;
-        return (<Link to={url}>{group.name}</Link>);
+        return (<div><Link to={url}>{group.name}</Link></div>);
       })}
       </div>
     )
