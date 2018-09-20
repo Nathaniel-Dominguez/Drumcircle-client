@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Post from './Post';
 import PostNew from './PostNew';
+import ProfileCard from './ProfileCard';
 
 class Group extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class Group extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-2">
+            <ProfileCard user={this.props.user} />
 					</div>
 					<div className="col-10">
             <PostNew handleSubmit={this.handleSubmit} groupId={this.props.match.params.id} user={this.props.user}/>

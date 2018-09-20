@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class GroupNew extends Component {
 	constructor(props) {
@@ -23,6 +24,9 @@ class GroupNew extends Component {
     axios.post('http://localhost:3000/groups/new',{
       userId: this.state.ids,
       name: this.state.name
+    }).then((response) => {
+      var url = `/group/${response.data._id}`;
+        <Redirect to={url} />
     });
   }
   handleSelectChange = (event) => {
@@ -61,18 +65,20 @@ class GroupNew extends Component {
 									<input name="name" type="text" className="form-control" value={this.state.name} onChange={this.handleChange} />
 								</label>
 							</div>
-							<div className="form-group">
-							    <label for="userId">Select Group Members:</label>
+							<div className="input-group">
 							    <select className="form-control" id="userId" value={this.state.selectValue} onChange={this.handleSelectChange}>
 							      <option>List of Member Names</option>
                     {this.state.allusers.map((user) => 
                       <option value={user.id} onClick={this.selectClick}>{user.name}</option>
                     )}
 							    </select>
-                  <button className="btn btn-success" type="button" onClick={this.handleButton}>Add</button>
-						  	</div>
+                  <div class="input-group-append">
+                    <button className="btn btn-success" type="button" onClick={this.handleButton}>Add</button>
+                  </div>
+              </div>
 						  	<div className="form-group">
 						  		<input hidden type="text"/>
+            {this.state.names.map((name) => <p>{name}</p>)}
 								<button value="submit" type="Submit" className="btn btn-success">Create new Group:</button>
 						  	</div>
 						</form>
@@ -80,7 +86,6 @@ class GroupNew extends Component {
 				</div>
         <div className="row">
           <div className="col-12">
-            {this.state.names.map((name) => <p>{name}</p>)}
           </div>
         </div>
 			</div>
