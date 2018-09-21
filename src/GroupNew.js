@@ -11,7 +11,7 @@ class GroupNew extends Component {
 			ids: [],
 			allusers: [],
       selectValue:'',
-      toRedirect: null
+      toRedirect: false
 		}
 	}
 
@@ -26,7 +26,8 @@ class GroupNew extends Component {
       userId: this.state.ids,
       name: this.state.name
     }).then((response) => {
-      var url = `/group/${response.data._id}`;
+      console.log('response', response.data);
+      var url = true;
       this.setState({toRedirect: url});
     });
   }
@@ -53,7 +54,7 @@ class GroupNew extends Component {
       });
   }
 	render() {
-    if(this.state.toRedirect != null) {
+    if(this.state.toRedirect) {
       return (<Redirect to='/profile' />) 
     }
 		return(
