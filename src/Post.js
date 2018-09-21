@@ -33,8 +33,9 @@ class Post extends Component {
     axios.post('http://localhost:3000/comments/new',data)
       .then((response) => {
         console.log(response.data);
-      });
+        newData._id = response.data._id;  
       this.setState({comments: this.state.comments.concat(newData)}); 
+      });
   }
 
   handleCommentDelete = (e, commentId, index) => {

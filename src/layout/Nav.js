@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import '../animate.css';
 
+
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      redirect : false 
+    }
+  }
   handleLogout = (e) => {
     console.log('logging out...');
     e.preventDefault();
     localStorage.removeItem('mernToken');
     this.props.updateUser();
+    this.setState({redirect: true});
   }
 
   render() {
@@ -15,7 +23,7 @@ class Nav extends Component {
     if(this.props.user){
       links = (
           <span>
-            <a onClick={this.handleLogout}>Logout</a>
+            <Link to="/" onClick={this.handleLogout}>Logout</Link>
             <Link to="/profile">Profile</Link>
           </span>
         );
@@ -27,6 +35,10 @@ class Nav extends Component {
             <Link to="/signup">Sign Up</Link>
           </span>
         );
+    }
+    if(this.state.redirect){
+      this.setState({ redirect: false });
+      return (<Redirect to="/" />);
     }
     return(
         <div>
