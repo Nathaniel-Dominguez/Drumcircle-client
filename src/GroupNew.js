@@ -41,7 +41,6 @@ class GroupNew extends Component {
         name = this.state.allusers[i].name;
       }   
     }
-    console.log(this.state.selectValue,name);
     this.setState({ names: this.state.names.concat(name), 
       ids: this.state.ids.concat(this.state.selectValue),
       });
@@ -50,7 +49,6 @@ class GroupNew extends Component {
   componentDidMount(){
     axios.get('http://localhost:3000/users')
       .then((response) => {
-        console.log('response',response);
         this.setState({allusers: response.data});
       });
   }
