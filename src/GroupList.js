@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import SERVER_URL from './constants/server';
 
 class GroupList extends Component {
 
@@ -13,7 +14,7 @@ class GroupList extends Component {
   
   componentDidMount () {
     if(this.props.user != null) {
-      axios.get(`http://localhost:3000/groups/${this.props.user.id}`)
+      axios.get(SERVER_URL + `/groups/${this.props.user.id}`)
         .then((response) => {
           this.setState ({ groups: response.data });
           console.log('groups response',response.data);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import SERVER_URL from './constants/server';
 
 class GroupNew extends Component {
 	constructor(props) {
@@ -22,7 +23,7 @@ class GroupNew extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault()
-    axios.post('http://localhost:3000/groups/new',{
+    axios.post(SERVER_URL + '/groups/new',{
       userId: this.state.ids,
       name: this.state.name
     }).then((response) => {
@@ -48,7 +49,7 @@ class GroupNew extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3000/users')
+    axios.get(SERVER_URL + '/users')
       .then((response) => {
         this.setState({allusers: response.data});
       });
