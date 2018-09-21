@@ -22,7 +22,7 @@ class Profile extends Component {
               <h2>Hello again, {this.props.user.name}!</h2>
               <h4>Your email is {this.props.user.email}</h4>
             </div>
-            <div className="col-sm">
+            <div className="col-sm groups-list rounded">
               {this.props.user != null ?  <GroupList user={this.props.user}/> : <div></div>}
             </div>
             <div className="col-sm make-new btn">

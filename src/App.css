@@ -79,7 +79,7 @@ body {
     width: 100px;
 }
 
-.post {
+.post, .groups-list {
   background-color: beige;
   padding: 20px;
   margin: 10px;
