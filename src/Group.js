@@ -19,10 +19,6 @@ class Group extends Component {
         this.setState({posts: posts});
       });
   }
-  componentDidUpdate(){
-    console.log('Updated state',this.props.user);
-  }
-
   handleSubmit = (event,childState) => {
     event.preventDefault();
     childState.userId = event.target.userId.value;
@@ -57,7 +53,7 @@ class Group extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-2">
-            <ProfileCard user={this.props.user} />
+            <ProfileCard user={this.props.user} groupId={this.props.match.params.id}/>
 					</div>
 					<div className="col-10">
             <PostNew handleSubmit={this.handleSubmit} groupId={this.props.match.params.id} user={this.props.user}/>
