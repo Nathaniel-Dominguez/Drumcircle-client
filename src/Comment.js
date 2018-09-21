@@ -10,7 +10,6 @@ class Comment extends Component {
         </div>
         
         <div className="col-md-6">
-          <button className="btn btn-secondary btn-sm" type="button"> Edit </button>
           <button className="btn btn-secondary btn-danger btn-sm" type="button" onClick={(e) => this.props.handleDelete(e,this.props.content._id, this.props.index)}> Delete </button>
         </div>
       </div>
