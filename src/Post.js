@@ -36,6 +36,18 @@ class Post extends Component {
       });
       this.setState({comments: this.state.comments.concat(newData)}); 
   }
+
+  handleDelete = (e) => {
+    e.preventDefault();
+    axios.delete(`http://localhost:3000/comments/${this.state.commentId}`)
+    .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+  }
+
+
+
   render(props){
     var author;
     if(this.props.content.userId != null){
@@ -47,9 +59,18 @@ class Post extends Component {
     return(
       <div>
         <h3>{this.props.content.content}</h3>
-        <p>By: {author}</p>
+        <div className="row">
+          <div className="col-md-6">
+            <p>By: {author}</p>
+          </div>
+          <div className="col-md-6">
+            <button className="btn btn-warning" type="button"> Edit </button>
+            <button className="btn btn-danger"type="button" onClick={this.handleDelete}> Delete </button>
+          </div>
+        </div>
         {this.state.comments.map((comment, index) => <Comment content={comment} key={index}/>)}
         <CommentForm handleSubmit={this.handleSubmit} postId={this.props.content._id} user={this.props.user}/>
+        <hr />
       </div>
     );
   }
