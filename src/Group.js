@@ -22,21 +22,17 @@ class Group extends Component {
   handleSubmit = (event,childState) => {
     event.preventDefault();
     childState.userId = event.target.userId.value;
-    console.log(childState);
     axios.post('http://localhost:3000/posts/new',childState)
       .then((response) => {
-        console.log(response);
         response.data.userId = this.props.user;
         this.setState({posts: this.state.posts.concat(response.data)});
       });
-
   }
 
   handlePostDelete = (e, postId, index) => {
     e.preventDefault();
     axios.delete(`http://localhost:3000/posts/${postId}`)
     .then((res) => {
-      console.log("index", index);
       var newPosts = this.state.posts;
       newPosts.splice(index,1);
       this.setState({
@@ -47,7 +43,6 @@ class Group extends Component {
       
   
 	render() {
-    console.log('user',this.props.user);
 		return(
 
 			<div className="container">

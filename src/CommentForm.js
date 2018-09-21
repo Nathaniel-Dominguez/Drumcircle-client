@@ -15,7 +15,6 @@ class CommentForm extends Component {
   render(props) {
     var name ='';
     var id='';
-    console.log('user', this.props.user);
     if(this.props.user != null){
     return (
       <form className="form-inline" onSubmit={(e) => {
