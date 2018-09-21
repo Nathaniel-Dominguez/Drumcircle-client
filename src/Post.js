@@ -70,8 +70,7 @@ class Post extends Component {
             <p>By: {author}</p>
           </div>
           <div className="col-md-6">
-            <button className="btn btn-warning" type="button"> Edit </button>
-            <button className="btn btn-danger"type="button" onClick={(e) => this.props.handlePostDelete(e,this.props.content._id, this.props.index)}> Delete </button>
+            <button className="btn btn-danger delete-post"type="button" onClick={(e) => this.props.handlePostDelete(e,this.props.content._id, this.props.index)}> Delete </button>
           </div>
         </div>
         {this.state.comments.map((comment, index) => <Comment content={comment} key={index} index={index} handleDelete={this.handleCommentDelete}/>)}

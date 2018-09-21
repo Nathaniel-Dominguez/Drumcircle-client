@@ -90,3 +90,9 @@ body {
   padding: 5px;
   margin: 5px;
 }
+
+.delete-post {
+  position: absolute;
+  top: -50px;
+  right: 5px;
+}
