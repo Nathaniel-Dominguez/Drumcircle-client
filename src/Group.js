@@ -33,6 +33,7 @@ class Group extends Component {
         response.data.userId = this.props.user;
         this.setState({posts: this.state.posts.concat(response.data)});
       });
+
   }
 
   handlePostDelete = (e, postId, index) => {
