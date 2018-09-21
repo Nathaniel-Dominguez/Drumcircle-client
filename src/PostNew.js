@@ -47,6 +47,7 @@ class PostNew extends Component {
             </form>
           </div>
         </div>
+        <hr />
       </div>
     )
   }

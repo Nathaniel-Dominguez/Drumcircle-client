@@ -34,6 +34,16 @@ class Group extends Component {
         this.setState({posts: this.state.posts.concat(response.data)});
       });
   }
+
+  handleDelete = (e) => {
+    e.preventDefault();
+    axios.delete(`http://localhost:3000/posts/${this.state.postId}`)
+    .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+  }
+      
   
 	render() {
     console.log('user',this.props.user);
