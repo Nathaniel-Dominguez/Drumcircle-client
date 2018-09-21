@@ -11,7 +11,7 @@ class ProfileCard extends Component {
   }
 
   componentDidMount(){
-    axios.get(`http://localhost:3000/groups/one/${this.props.groupId}`)
+    axios.get(SERVER_URL + `/groups/one/${this.props.groupId}`)
       .then((response) => {
         console.log('RESPONSE', response.data[0].userId);
         this.setState({ users: response.data[0].userId});

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Post from './Post';
 import PostNew from './PostNew';
 import ProfileCard from './ProfileCard';
+import SERVER_URL from './constants/server';
 
 class Group extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Group extends Component {
     };
   }
   componentDidMount() {
-    axios.get(`http://localhost:3000/posts/${this.props.match.params.id}`)
+    axios.get(SERVER_URL + `/posts/${this.props.match.params.id}`)
       .then((response) => {
         var posts = response.data;
         this.setState({posts: posts});
@@ -22,7 +23,7 @@ class Group extends Component {
   handleSubmit = (event,childState) => {
     event.preventDefault();
     childState.userId = event.target.userId.value;
-    axios.post('http://localhost:3000/posts/new',childState)
+    axios.post(SERVER_URL + '/posts/new',childState)
       .then((response) => {
         response.data.userId = this.props.user;
         this.setState({posts: this.state.posts.concat(response.data)});
@@ -31,7 +32,7 @@ class Group extends Component {
 
   handlePostDelete = (e, postId, index) => {
     e.preventDefault();
-    axios.delete(`http://localhost:3000/posts/${postId}`)
+    axios.delete(SERVER_URL + `/posts/${postId}`)
     .then((res) => {
       var newPosts = this.state.posts;
       newPosts.splice(index,1);

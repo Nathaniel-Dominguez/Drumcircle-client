@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Comment from './Comment';
 import CommentForm from './CommentForm';
+import SERVER_URL from './constants/server';
 
 class Post extends Component {
   constructor() {
@@ -13,8 +14,7 @@ class Post extends Component {
   }
 
   componentDidMount(){
-    console.log('COMMENT CONTENT',this.props.content);
-    var comments = axios.get(`http://localhost:3000/comments/${this.props.content._id}`)
+    var comments = axios.get(SERVER_URL + `/comments/${this.props.content._id}`)
       .then((response) => {
           this.setState({ comments: response.data});
       });
@@ -32,7 +32,7 @@ class Post extends Component {
       postId : e.target.postId.value,
       content : e.target.content.value
     };
-    axios.post('http://localhost:3000/comments/new',data)
+    axios.post(SERVER_URL + '/comments/new',data)
       .then((response) => {
         console.log(response.data);
         newData._id = response.data._id;  
@@ -42,7 +42,7 @@ class Post extends Component {
 
   handleCommentDelete = (e, commentId, index) => {
     e.preventDefault();
-    axios.delete(`http://localhost:3000/comments/${commentId}`)
+    axios.delete(SERVER_URL + `/comments/${commentId}`)
     .then((res) => {
       console.log("index", index);
       var newComments = this.state.comments;
