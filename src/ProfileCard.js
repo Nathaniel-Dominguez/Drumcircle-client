@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import SERVER_URL from './constants/server';
 import axios from 'axios';
 
 class ProfileCard extends Component {
