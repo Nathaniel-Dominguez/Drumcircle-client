@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import GroupCard from './GroupCard';
-import axios from 'axios';
 import GroupList from './GroupList';
 
 class Profile extends Component {

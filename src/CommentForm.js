@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SERVER_URL from './constants/server';
 
 class CommentForm extends Component {
   
@@ -20,7 +21,7 @@ class CommentForm extends Component {
       <form className="form-inline" onSubmit={(e) => {
         this.setState({ content: '' });
         this.props.handleSubmit(e)}
-      } method="POST" action="http://localhost:3000/comments/new">
+      } method="POST" action="{`${SERVER_URL}/comments/new`}">
       <div className="form-group"> 
         <div className="row col-8">
         <input class="form-control" type="text" name="content" placeholder="Comment" value={this.state.content} onChange={this.handleChange}/>
