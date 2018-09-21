@@ -61,7 +61,7 @@ class Post extends Component {
     }
     console.log('POST USER', this.props.user);
     return(
-      <div>
+      <div className="post rounded">
         <h3>{this.props.content.content}</h3>
         <div className="row">
           <div className="col-md-6">
@@ -74,7 +74,6 @@ class Post extends Component {
         </div>
         {this.state.comments.map((comment, index) => <Comment content={comment} key={index} index={index} handleDelete={this.handleCommentDelete}/>)}
         <CommentForm handleSubmit={this.handleSubmit} postId={this.props.content._id} user={this.props.user}/>
-        <hr />
       </div>
     );
   }
