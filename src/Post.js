@@ -37,13 +37,17 @@ class Post extends Component {
       this.setState({comments: this.state.comments.concat(newData)}); 
   }
 
-  handleDelete = (e) => {
+  handleCommentDelete = (e, commentId, index) => {
     e.preventDefault();
-    axios.delete(`http://localhost:3000/comments/${this.state.commentId}`)
+    axios.delete(`http://localhost:3000/comments/${commentId}`)
     .then((res) => {
-        console.log(res);
-        console.log(res.data);
+      console.log("index", index);
+      var newComments = this.state.comments;
+      newComments.splice(index,1);
+      this.setState({
+        comments: newComments
       });
+    });
   }
 
 
@@ -65,10 +69,10 @@ class Post extends Component {
           </div>
           <div className="col-md-6">
             <button className="btn btn-warning" type="button"> Edit </button>
-            <button className="btn btn-danger"type="button" onClick={this.handleDelete}> Delete </button>
+            <button className="btn btn-danger"type="button" onClick={(e) => this.props.handlePostDelete(e,this.props.content._id, this.props.index)}> Delete </button>
           </div>
         </div>
-        {this.state.comments.map((comment, index) => <Comment content={comment} key={index}/>)}
+        {this.state.comments.map((comment, index) => <Comment content={comment} key={index} index={index} handleDelete={this.handleCommentDelete}/>)}
         <CommentForm handleSubmit={this.handleSubmit} postId={this.props.content._id} user={this.props.user}/>
         <hr />
       </div>

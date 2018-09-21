@@ -35,13 +35,17 @@ class Group extends Component {
       });
   }
 
-  handleDelete = (e) => {
+  handlePostDelete = (e, postId, index) => {
     e.preventDefault();
-    axios.delete(`http://localhost:3000/posts/${this.state.postId}`)
+    axios.delete(`http://localhost:3000/posts/${postId}`)
     .then((res) => {
-        console.log(res);
-        console.log(res.data);
+      console.log("index", index);
+      var newPosts = this.state.posts;
+      newPosts.splice(index,1);
+      this.setState({
+        posts: newPosts
       });
+    });
   }
       
   
@@ -57,7 +61,7 @@ class Group extends Component {
 					<div className="col-10">
             <PostNew handleSubmit={this.handleSubmit} groupId={this.props.match.params.id} user={this.props.user}/>
             {this.state.posts.map((post, index) => 
-              <Post user={this.props.user} key={index} content={post}/>
+              <Post user={this.props.user} key={index} index={index} content={post} handlePostDelete={this.handlePostDelete}/>
             )}
 					</div>
 				</div>
