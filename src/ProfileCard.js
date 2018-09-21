@@ -24,10 +24,6 @@ class ProfileCard extends Component {
       return (
         <div className="profile-card">
           <div>
-            <Link to="/profile"><img className="rounded-circle" src={this.props.user.image}/></Link>
-            <h3>{this.props.user.name}</h3>
-          </div>
-          <div>
             {this.state.users.map((user) => {
               return (
                 <div>
