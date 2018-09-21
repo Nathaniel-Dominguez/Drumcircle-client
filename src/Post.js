@@ -64,7 +64,7 @@ class Post extends Component {
     return(
       <div className="post rounded">
         <h3>{this.props.content.content}</h3>
-        {(this.props.content.image != null) ? <img className="img-thumbnail" alt="Responsive image" src={this.props.content.image} /> : <div></div> }
+        {(this.props.content.image != null && this.props.content.image != '') ? <img className="img-thumbnail" alt="Responsive image" src={this.props.content.image} /> : <div></div> }
         <div className="row">
           <div className="col-md-6">
             <p>By: {author}</p>
