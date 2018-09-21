@@ -8,13 +8,13 @@ class Home extends Component {
     	<div className="container">
 		    <div className="row">
 		        <div className="col-lg-8 d-none d-lg-block">
-		            <h1 className="display-4">Build <strong>social profiles</strong> and Gain! </h1>
+		            <h1 className="display-4">Build <strong>social profiles</strong> and create account now! </h1>
 		            <div className="d-flex flex-row">
 		                <div className="p-4 align-self-start">
 		                	<i className="fa fa-check"></i>
 		                </div>
 		                <div className="p-4 align-self-end">
-		                	You should join the Drumcircle group, you will make great friends.
+		                	You can share your posts in the groups and other people can comment on it.
 		                </div>
 		            </div>
 		            <div className="d-flex flex-row">
@@ -22,7 +22,7 @@ class Home extends Component {
 		                	<i className="fa fa-check"></i>
 		                </div>
 		                <div className="p-4 align-self-end">
-		                	You should join the Drumcircle group, you will make great friends.
+		                	You can add a picture and post them in the groups and share with everyone .
 		                </div>
 		            </div>
 		            <div className="d-flex flex-row">
@@ -30,7 +30,7 @@ class Home extends Component {
 		                	<i className="fa fa-check"></i>
 		                </div>
 		                <div className="p-4 align-self-end">
-		                  	You should join the Drumcircle group, you will make great friends.
+		                  	Drumcircle group is every drumer's dream.
 		                </div>
 		            </div>
 		        </div>
@@ -66,6 +66,7 @@ class Home extends Component {
 			    	<span className="sr-only">Next</span>
 			  	</a>
 			</div>
+			<br />
     		<div id="intro">
 			    <div className="container">
 			      	<div className="jumbotron">
