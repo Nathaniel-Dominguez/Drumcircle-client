@@ -26,7 +26,10 @@ class PostNew extends Component {
         <div className="row">
           <div className="col-sm-12">
 
-            <form className="form" onSubmit={(event) => { this.props.handleSubmit(event,this.state)}} method="POST" action="http://localhost:3000/posts/new">
+            <form className="form" onSubmit={(event) => { 
+              this.setState({image: '', content:''});
+              this.props.handleSubmit(event,this.state)}
+            } method="POST" action="http://localhost:3000/posts/new">
               
               <div className="form-group">
                 <label>

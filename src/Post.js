@@ -11,6 +11,7 @@ class Post extends Component {
       userId: ''
     }
   }
+
   componentDidMount(){
     console.log('COMMENT CONTENT',this.props.content);
     var comments = axios.get(`http://localhost:3000/comments/${this.props.content._id}`)
@@ -18,6 +19,7 @@ class Post extends Component {
           this.setState({ comments: response.data});
       });
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
     var data = {
@@ -33,8 +35,9 @@ class Post extends Component {
     axios.post('http://localhost:3000/comments/new',data)
       .then((response) => {
         console.log(response.data);
-      });
+        newData._id = response.data._id;  
       this.setState({comments: this.state.comments.concat(newData)}); 
+      });
   }
 
   handleCommentDelete = (e, commentId, index) => {
@@ -50,8 +53,6 @@ class Post extends Component {
     });
   }
 
-
-
   render(props){
     var author;
     if(this.props.content.userId != null){
@@ -63,6 +64,7 @@ class Post extends Component {
     return(
       <div className="post rounded">
         <h3>{this.props.content.content}</h3>
+        {(this.props.content.image != null) ? <img className="img-thumbnail" alt="Responsive image" src={this.props.content.image} /> : <div></div> }
         <div className="row">
           <div className="col-md-6">
             <p>By: {author}</p>
@@ -75,7 +77,7 @@ class Post extends Component {
         {this.state.comments.map((comment, index) => <Comment content={comment} key={index} index={index} handleDelete={this.handleCommentDelete}/>)}
         <CommentForm handleSubmit={this.handleSubmit} postId={this.props.content._id} user={this.props.user}/>
       </div>
-    );
+    )
   }
 }
 

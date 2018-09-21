@@ -14,7 +14,6 @@ class Profile extends Component {
 
   render() {
     if(this.props.user){
-      console.log(this.props.user)
       return (
        <div className="container" id="main-body">
           <div className="row">
