@@ -48,7 +48,7 @@ class Group extends Component {
 
 			<div className="container">
 				<div className="row">
-					<div className="col-2">
+					<div className="col-2 hidden-sm-down">
             <ProfileCard user={this.props.user} groupId={this.props.match.params.id}/>
 					</div>
 					<div className="col-10">
