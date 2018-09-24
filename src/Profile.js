@@ -25,7 +25,7 @@ class Profile extends Component {
               {this.props.user != null ?  <GroupList user={this.props.user}/> : <div></div>}
             </div>
             <div className="col-sm make-new btn">
-              <Link className="btn btn-success" to="/group/new">Make a new Group</Link>
+              <Link className="btn btn-success" to="/group/new">Make a new Circle</Link>
             </div>
           </div>
          </div>
